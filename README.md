@@ -103,3 +103,8 @@ Data Science Graduate | Junior Data Analyst | Agentic AI & Automation Enthusiast
     n8n
     data-science
     presentation-generator
+
+## Output 
+
+https://github.com/user-attachments/assets/cbe1d352-8010-435a-a516-9664aba607d3
+
