@@ -1,0 +1,129 @@
+{
+  "name": "PPT Generation",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "4859d489-e1e4-4b1f-a5a2-950596055f06",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -400,
+        -80
+      ],
+      "id": "de72086e-23c0-4361-bab7-a7f974d7b10b",
+      "name": "Webhook",
+      "webhookId": "4859d489-e1e4-4b1f-a5a2-950596055f06"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=based on the given below info , try to create a pptx python code for generating a power point presentation {{ $json.body.prompt }}\n\nthe output must should only contain python code  ",
+        "options": {
+          "systemMessage": "You are a helpful assistant and you are having a 10+ years of experience in creating a ppt based on a given topic"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        -192,
+        -80
+      ],
+      "id": "bf39a4ea-6333-4351-95d1-f61d0a409486",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -240,
+        96
+      ],
+      "id": "b986ea7b-2ef8-4938-ab3d-423144d2b9c4",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "g84fEnXPUZNuVqhG",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        144,
+        -80
+      ],
+      "id": "3c28efa9-6acd-4f87-a3ba-048bb56aca05",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {
+    "AI Agent": [
+      {
+        "json": {
+          "output": "```python\nfrom pptx import Presentation\nfrom pptx.util import Inches, Pt\nfrom pptx.enum.text import MSO_ANCHOR, MSO_AUTO_SIZE\nfrom pptx.enum.shapes import MSO_SHAPE\n\ndef create_agentic_ai_presentation():\n    prs = Presentation()\n\n    # Define a title and content layout for general slides\n    title_slide_layout = prs.slide_layouts[0]  # Title slide layout\n    bullet_slide_layout = prs.slide_layouts[1] # Title and Content layout\n\n    # --- Slide 1: Introduction to Agentic AI ---\n    slide1 = prs.slides.add_slide(bullet_slide_layout)\n    title1 = slide1.shapes.title\n    body1 = slide1.placeholders[1]\n\n    title1.text = \"Introduction to Agentic AI\"\n\n    tf1 = body1.text_frame\n    tf1.clear()  # Clear existing content\n\n    p1 = tf1.add_paragraph()\n    p1.text = \"Autonomous entities designed to achieve specific goals.\"\n    p1.level = 0\n    p1.font.size = Pt(20)\n\n    p2 = tf1.add_paragraph()\n    p2.text = \"Operate with a degree of independence, making decisions and taking actions.\"\n    p2.level = 0\n    p2.font.size = Pt(20)\n\n    p3 = tf1.add_paragraph()\n    p3.text = \"Key characteristics often include:\"\n    p3.level = 0\n    p3.font.size = Pt(20)\n\n    p4 = tf1.add_paragraph()\n    p4.text = \"Goal-Oriented: Focused on achieving defined objectives.\"\n    p4.level = 1\n    p4.font.size = Pt(18)\n\n    p5 = tf1.add_paragraph()\n    p5.text = \"Autonomy: Ability to act without constant human intervention.\"\n    p5.level = 1\n    p5.font.size = Pt(18)\n\n    p6 = tf1.add_paragraph()\n    p6.text = \"Perception & Action: Interprets environment, plans, and executes actions.\"\n    p6.level = 1\n    p6.font.size = Pt(18)\n\n    p7 = tf1.add_paragraph()\n    p7.text = \"Memory & Learning: Retains information and adapts behavior over time.\"\n    p7.level = 1\n    p7.font.size = Pt(18)\n\n    # --- Slide 2: Agentic AI vs Generative AI ---\n    slide2 = prs.slides.add_slide(bullet_slide_layout)\n    title2 = slide2.shapes.title\n    body2 = slide2.placeholders[1]\n\n    title2.text = \"Agentic AI vs. Generative AI\"\n\n    # For a comparison, we can split the body placeholder or use a table,\n    # but for simplicity, we'll use bullet points for each, emphasizing the difference.\n    # The default layout (bullet_slide_layout) often only has one body placeholder.\n    # We can manually add text boxes for a clearer two-column look if preferred,\n    # but sticking to the standard placeholder for brevity and layout consistency.\n\n    tf2 = body2.text_frame\n    tf2.clear()\n\n    # Agentic AI section\n    p_agentic_header = tf2.add_paragraph()\n    p_agentic_header.text = \"Agentic AI\"\n    p_agentic_header.level = 0\n    p_agentic_header.font.size = Pt(22)\n    p_agentic_header.font.bold = True\n\n    p_agentic1 = tf2.add_paragraph()\n    p_agentic1.text = \"Focus: Task execution, decision-making, and goal attainment.\"\n    p_agentic1.level = 1\n    p_agentic1.font.size = Pt(18)\n\n    p_agentic2 = tf2.add_paragraph()\n    p_agentic2.text = \"Output: Actions, completed tasks, strategic decisions.\"\n    p_agentic2.level = 1\n    p_agentic2.font.size = Pt(18)\n\n    p_agentic3 = tf2.add_paragraph()\n    p_agentic3.text = \"Role: Acts as an autonomous agent within an environment.\"\n    p_agentic3.level = 1\n    p_agentic3.font.size = Pt(18)\n\n    # Add a separator or space\n    p_space = tf2.add_paragraph()\n    p_space.text = \"\"\n    p_space.level = 0 # No bullet\n\n    # Generative AI section\n    p_generative_header = tf2.add_paragraph()\n    p_generative_header.text = \"Generative AI\"\n    p_generative_header.level = 0\n    p_generative_header.font.size = Pt(22)\n    p_generative_header.font.bold = True\n\n    p_generative1 = tf2.add_paragraph()\n    p_generative1.text = \"Focus: Creating new content (text, images, audio, code).\"\n    p_generative1.level = 1\n    p_generative1.font.size = Pt(18)\n\n    p_generative2 = tf2.add_paragraph()\n    p_generative2.text = \"Output: Novel artifacts, creative works, synthetic data.\"\n    p_generative2.level = 1\n    p_generative2.font.size = Pt(18)\n\n    p_generative3 = tf2.add_paragraph()\n    p_generative3.text = \"Role: Produces content based on learned patterns from data.\"\n    p_generative3.level = 1\n    p_generative3.font.size = Pt(18)\n\n\n    prs.save(\"Agentic_AI_Presentation.pptx\")\n\nif __name__ == \"__main__\":\n    create_agentic_ai_presentation()\n```"
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      }
+    ]
+  },
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "2d7e79e1-e910-4da8-8c3a-4da869c5a789",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "145122803dbc805d8656deca7e53d3635eeaaa733cf606ad8b2ead11801b4ef0"
+  },
+  "id": "bVEIHsSaplY3OgKI",
+  "tags": []
+}
