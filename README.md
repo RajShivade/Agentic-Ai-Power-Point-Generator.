@@ -23,17 +23,17 @@ Built using Streamlit, autonomous AI workflows, and python-pptx, this project el
 
 ## 🛠 Tech Stack
 
-Python
+ - Python
 
-Streamlit – Frontend UI
+ - Streamlit – Frontend UI
 
-python-pptx – PowerPoint generation
+ - python-pptx – PowerPoint generation
 
-n8n – AI workflow automation
+ - n8n – AI workflow automation
 
-REST APIs
+ - REST APIs
 
-Agentic AI concepts
+ - Agentic AI concepts
 
 ## 📂 Project Structure
 
@@ -53,13 +53,15 @@ Agentic AI concepts
 
   ## 2️⃣ Install Dependencies 
     pip install -r requirements.txt
-  Required libraries:
+  
+  
+### Required libraries:
 
-streamlit
+  - streamlit
 
-python-pptx
+  - python-pptx
 
-requests
+  - requests
 
  ## ▶️ How to Run
     streamlit run app.py
@@ -90,8 +92,12 @@ requests
 
 ## 👤 Author
 
-Raj Shivade
+**Raj Shivade** 
 Data Science Graduate | Junior Data Analyst | Agentic AI & Automation Enthusiast
+
+📘 [LinkedIn](http://www.linkedin.com/in/raj-shivade25)  
+
+💻 [GitHub](https://github.com/RajShivade)
 
 
 ## 🏷️ Tags
