@@ -1,9 +1,9 @@
-## 🤖 Agentic AI PowerPoint Generator
+## 🤖 Agentic AI PowerPoint Generator:
 
 An Agentic AI–powered PowerPoint generator that automatically creates professional, modern, and presentation-ready PPT decks from natural-language prompts.
 Built using Streamlit, autonomous AI workflows, and python-pptx, this project eliminates manual slide creation and enables fully automated presentation generation.
 
-## 🚀 Features
+## 🚀 Features:
 
 🤖 Agentic AI workflow for autonomous slide generation
 
@@ -21,7 +21,7 @@ Built using Streamlit, autonomous AI workflows, and python-pptx, this project el
 
 🛡 Robust error handling and safe execution
 
-## 🛠 Tech Stack
+## 🛠 Tech Stack:
 
  - Python
 
@@ -35,7 +35,7 @@ Built using Streamlit, autonomous AI workflows, and python-pptx, this project el
 
  - Agentic AI concepts
 
-## 📂 Project Structure
+## 📂 Project Structure:
 
     Agentic-AI-PPT-Generator/
     │
@@ -45,17 +45,19 @@ Built using Streamlit, autonomous AI workflows, and python-pptx, this project el
     ├── README.md             # Project documentation
     └── generated_ppt/        # Auto-generated PowerPoint files
 
-## ⚙️ Installation & Setup
+## ⚙️ Installation & Setup:
 
-  ## 1️⃣ Clone the Repository
-     git clone https://github.com/your-username/Agentic-AI-PPT-Generator.git
+  **1️⃣ Clone the Repository** 
+   
+    git clone https://github.com/your-username/Agentic-AI-PPT-Generator.git
     cd Agentic-AI-PPT-Generator
 
-  ## 2️⃣ Install Dependencies 
+  **2️⃣ Install Dependencies**
+    
     pip install -r requirements.txt
   
   
-### Required libraries:
+**Required libraries:**
 
   - streamlit
 
@@ -63,10 +65,11 @@ Built using Streamlit, autonomous AI workflows, and python-pptx, this project el
 
   - requests
 
- ## ▶️ How to Run
+**▶️ How to Run**
+    
     streamlit run app.py
 
-## 🧠 How It Works
+## 🧠 How It Works:
 
 1. User enters a natural-language prompt describing the presentation
 
@@ -78,7 +81,7 @@ Built using Streamlit, autonomous AI workflows, and python-pptx, this project el
 
 5. A fully structured PowerPoint (.pptx) is generated and available for download
 
-## 🎯 Use Cases
+## 🎯 Use Cases:
 
  - Academic & college presentations
 
@@ -90,7 +93,7 @@ Built using Streamlit, autonomous AI workflows, and python-pptx, this project el
 
  - AI-powered content generation systems
 
-## 👤 Author
+## 👤 Author:
 
 **Raj Shivade** 
 Data Science Graduate | Junior Data Analyst | Agentic AI & Automation Enthusiast
@@ -100,7 +103,7 @@ Data Science Graduate | Junior Data Analyst | Agentic AI & Automation Enthusiast
 💻 [GitHub](https://github.com/RajShivade)
 
 
-## 🏷️ Tags
+## 🏷️ Tags:
     agentic-ai
     streamlit
     python-pptx
